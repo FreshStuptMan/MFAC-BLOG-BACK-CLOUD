@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5da7153a-19c6-4fe8-8197-0a14078dc6ae" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../mfac-api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mfac-api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mfac-gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mfac-gateway/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +54,7 @@
       <updated>1723901519041</updated>
       <workItem from="1723901520220" duration="2000" />
       <workItem from="1723901972588" duration="12000" />
+      <workItem from="1723902118203" duration="4000" />
     </task>
     <servers />
   </component>
