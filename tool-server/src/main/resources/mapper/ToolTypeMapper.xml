@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.tool.mapper.ToolTypeMapper">
+    <!--  创建工具分类  -->
+    <insert id="create">
+        insert into tool_type(id, name, creator_id, create_time)
+        values (#{id}, #{name}, #{creatorId}, #{createTime})
+    </insert>
+    <!--  获取工具类型列表  -->
+    <select id="list" resultType="com.mfac.tool.pojo.vo.ToolTypeListVO">
+        select tt.*,creator.name as creatorName, COUNT(t.id) as totalTool from tool_type tt
+        left join user as creator on creator.id = tt.creator_id
+        left join tool as t on t.tool_type_id = tt.id
+        <where>
+            <if test="name != null and name != ''">and tt.name like concat('%', #{name}, '%')</if>
+        </where>
+        group by tt.id
+    </select>
+    <!--  更新工具类型信息  -->
+    <update id="update">
+        update tool_type
+        <set>
+            <if test="name != null and name != ''">name = #{name},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.tool.mapper.ToolMapper">
+    <!--  创建工具  -->
+    <insert id="create">
+        insert into tool(id, name, description, link, avatar, tool_type_id, create_time, creator_id, color)
+        values (#{id}, #{name}, #{description}, #{link}, #{avatar}, #{toolTypeId}, #{createTime}, #{creatorId}, #{color})
+    </insert>
+    <!--  获取工具列表  -->
+    <select id="list" resultType="com.mfac.tool.pojo.vo.ToolListVO">
+        select t.*, creator.name as creatorName, tt.name as toolTypeName from tool t
+        left join user as creator on creator.id = t.creator_id
+        left join tool_type as tt on tt.id = t.tool_type_id
+        <where>
+            <if test="name != null and name != ''">and t.name like concat('%', #{name}, '%')</if>
+            <if test="toolTypeId != null">and t.tool_type_id = #{toolTypeId}</if>
+        </where>
+    </select>
+    <!--  更新工具信息  -->
+    <update id="update">
+        update tool
+        <set>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="description != null and description != ''">description = #{description},</if>
+            <if test="link != null and link != ''">link = #{link},</if>
+            <if test="avatar != null">avatar = #{avatar},</if>
+            <if test="toolTypeId != null">tool_type_id = #{toolTypeId},</if>
+            <if test="color != null and color != ''">color = #{color},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
