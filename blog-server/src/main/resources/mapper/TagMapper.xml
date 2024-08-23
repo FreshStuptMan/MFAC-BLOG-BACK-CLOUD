@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.blog.mapper.TagMapper">
+    <!--  创建标签  -->
+    <insert id="create">
+        insert into tag(id, name, color, creator_id, create_time, update_time)
+        values (#{id}, #{name}, #{color}, #{creatorId}, #{createTime}, #{updateTime})
+    </insert>
+    <!--  获取标签列表  -->
+    <select id="list" resultType="com.mfac.blog.pojo.vo.TagListVO">
+        select t.*, creator.name as creatorName, COUNT(bt.blog_id) as totalBlog  from tag t
+        join user as creator on creator.id = t.creator_id
+        left join blog_tag as bt on bt.tag_id = t.id
+        <where>
+            <if test="name != null and name != ''">and t.name like concat('%',#{name}, '%')</if>
+        </where>
+        group by t.id
+        order by create_time ASC
+    </select>
+    <!--  更新标签  -->
+    <update id="update">
+        update tag
+        <set>
+            <if test="name != '' and name != null">name = #{name},</if>
+            <if test="color != '' and color != null">color = #{color},</if>
+            update_time = #{updateTime},
+        </set>
+        where id = #{id}
+    </update>
+    <!--  获取所有标签，并包括其下的博客数  -->
+    <select id="listAllWithTotal" resultType="com.mfac.blog.pojo.vo.TagListVO">
+        select t.*, creator.name as creatorName, COUNT(bt.blog_id) as totalBlog from tag t
+        join user as creator on creator.id = t.creator_id
+        left join blog_tag as bt on bt.tag_id = t.id
+        group by t.id
+    </select>
+
+    <!--  向博客-标签关系表中插入数据  -->
+    <insert id="createBlogTagBatch">
+        insert into blog_tag(blog_id, tag_id)
+        values
+        <foreach collection="tagIds" item="tagId" separator=",">
+            (#{blogId}, #{tagId})
+        </foreach>
+    </insert>
+    <!--  根据博客编号查询标签  -->
+    <select id="listFromBlogTagByBlogId" resultType="com.mfac.blog.pojo.entity.Tag">
+        select t.* from tag t
+        where t.id in (select tag_id from blog_tag where blog_id = #{blogId})
+    </select>
+</mapper>

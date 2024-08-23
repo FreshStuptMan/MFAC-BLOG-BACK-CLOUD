@@ -6,11 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="9ae4cdd5-ab9c-4527-86b4-27ae5322bfd5" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -36,14 +44,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/WebProject/MFAC/BackCloud/MFAC-BLOG-BACK-CLOUD/blog-server/src/main/java/com/mfac/blog",
+    "project.structure.last.edited": "全局库",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebProject\MFAC\BackCloud\MFAC-BLOG-BACK-CLOUD\blog-server\src\main\java\com\mfac\blog" />
+      <recent name="E:\WebProject\MFAC\BackCloud\MFAC-BLOG-BACK-CLOUD\blog-server\src\main\java\com\mfac\blog\controller\admin" />
+      <recent name="E:\WebProject\MFAC\BackCloud\MFAC-BLOG-BACK-CLOUD\blog-server\src\main\java\com\mfac\blog\controller" />
+      <recent name="E:\WebProject\MFAC\BackCloud\MFAC-BLOG-BACK-CLOUD\blog-server\src\main\java\com\mfac\blog\service\impl" />
+      <recent name="E:\WebProject\MFAC\BackCloud\MFAC-BLOG-BACK-CLOUD\blog-server\src\main\java\com\mfac\blog\service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mfac.blog.json" />
+      <recent name="com.mfac.blog.constent" />
+      <recent name="com.mfac.blog.properties" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="blog-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mfac.blog.BlogApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mfac.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BlogApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -56,6 +107,7 @@
       <workItem from="1723901835569" duration="15000" />
       <workItem from="1723902012191" duration="3000" />
       <workItem from="1723902021461" duration="2000" />
+      <workItem from="1724378600600" duration="4612000" />
     </task>
     <servers />
   </component>

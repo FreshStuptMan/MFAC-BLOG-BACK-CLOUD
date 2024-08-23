@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.blog.mapper.ClassifyMapper">
+    <!--  创建分类  -->
+    <insert id="create">
+        insert into classify(id, name, color, creator_id, create_time, update_time)
+        values (#{id}, #{name}, #{color},#{creatorId}, #{createTime}, #{updateTime})
+    </insert>
+    <!--  获取分类列表  -->
+    <select id="list" resultType="com.mfac.blog.pojo.vo.ClassifyListVO">
+        select c.*,creator.name as creatorName, COUNT(b.id) as blogTotal from classify c
+        join user as creator on creator.id = c.creator_id
+        left join blog as b on b.classify_id = c.id
+        <where>
+            <if test="name != '' and name != null">and c.name like concat('%', #{name}, '%')</if>
+        </where>
+        group by c.id
+    </select>
+    <!--  更新分类  -->
+    <update id="update">
+        update classify
+        <set>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="color != null and color != ''">color = #{color},</if>
+            update_time = #{updateTime},
+        </set>
+        where id = #{id}
+    </update>
+    <!--  获取所有分类，并且包括相关的博客数  -->
+    <select id="listAllWithTotal" resultType="com.mfac.blog.pojo.vo.ClassifyListVO">
+        select c.*,creator.name as creatorName,COUNT(b.id) as blogTotal from classify c
+        join user as creator on creator.id = c.creator_id
+        left join blog as b on b.classify_id = c.id
+        group by c.id
+    </select>
+</mapper>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.blog.mapper.BlogMapper">
+    <!--  创建博客  -->
+    <insert id="create">
+        insert into blog(id, title, description, avatar,
+                         create_time, update_time, publish_time,
+                         author_id, status, content, classify_id, types)
+        values (#{id}, #{title}, #{description}, #{avatar},
+                #{createTime}, #{updateTime}, #{publishTime},
+                #{authorId}, #{status}, #{content}, #{classifyId}, #{types})
+    </insert>
+    <!--  获取博客列表  -->
+    <select id="list" resultType="com.mfac.blog.pojo.vo.BlogListVO">
+        select b.*, author.name as authorName, author.avatar as authorAvatar, c.name as classifyName
+        from blog b
+        join user as author on author.id = b.author_id
+        join classify as c on c.id = b.classify_id
+        <where>
+            <if test="title != '' and title != null">
+                and b.title like concat('%', #{title}, '%')
+            </if>
+            <if test="classifyId != null">
+                and b.classify_id = #{classifyId}
+            </if>
+            <if test="tagId != null">
+                and b.id in (select blog_id from blog_tag where tag_id = #{tagId})
+            </if>
+            <if test="status">
+                and b.status = #{status}
+            </if>
+        </where>
+    </select>
+    <!--  修改博客状态  -->
+    <update id="changeStatus">
+        update blog
+        <set>
+            status = #{status},
+            <if test="publishTime != null">publish_time = #{publishTime},</if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--  获取博客详情  -->
+    <select id="detail" resultType="com.mfac.blog.pojo.vo.BlogDetailVO">
+        select b.*, author.name as authorName, author.avatar as authorAvatar, c.name as classifyName
+        from blog b
+        join user as author on author.id = b.author_id
+        join classify as c on c.id = b.classify_id
+        where b.id = #{id}
+    </select>
+    <!--  更新博客  -->
+    <update id="update">
+        update blog
+        <set>
+            <if test="title != '' and title != null">title = #{title},</if>
+            <if test="types != null">types = #{types},</if>
+            <if test="content != '' and content != null">content = #{content},</if>
+            <if test="classifyId != null">classify_id = #{classifyId},</if>
+            <if test="avatar != '' and avatar != null">avatar = #{avatar},</if>
+            <if test="description != '' and description != null">description = #{description},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="publishTime != null">publish_time = #{publishTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime}</if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--  获取最新的5条博客  -->
+    <select id="newest" resultType="com.mfac.blog.pojo.vo.BlogListVO">
+        select b.*, author.name as authorName, author.avatar as authorAvatar, c.name as classifyName
+        from blog b
+        join user as author on author.id = b.author_id
+        join classify as c on c.id = b.classify_id
+        where b.status = 2
+        order by b.publish_time DESC
+        limit 5
+    </select>
+    <!-- 搜索博客   -->
+    <select id="search" resultType="com.mfac.blog.pojo.vo.BlogListVO">
+        select b.*, author.name as authorName, author.avatar as authorAvatar, c.name as classifyName
+        from blog b
+        join user as author on author.id = b.author_id
+        join classify as c on c.id = b.classify_id
+        <where>
+            <if test="classifyId != null">and b.classify_id = #{classifyId}</if>
+            <if test="tagId != null">and b.id in (select blog_id from blog_tag where tag_id = #{tagId})</if>
+            <if test="key != null and key != ''">and b.title like concat('%', #{key}, '%')</if>
+            and status = 2
+        </where>
+    </select>
+</mapper>
