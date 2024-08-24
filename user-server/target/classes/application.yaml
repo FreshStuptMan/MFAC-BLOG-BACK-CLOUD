@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: user-server
+  main:
+    allow-circular-references: true
+  #DataSource
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mfac
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#Mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.mfac.user.pojo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8083
+#JWT
+jwt:
+  secret-key: MFAC
+  ttl: 7200000
+  token-name: token
+  user-id: userId
