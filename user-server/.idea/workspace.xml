@@ -5,28 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1995a537-266a-44d2-bcd8-66eb8e96758b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/UserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/config/WebMvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/controller/admin/AdminUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/interceptor/AdminInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/json/JacksonObjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/pojo/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/pojo/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/pojo/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/pojo/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/pojo/vo/LoginVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/pojo/vo/UserDetailVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/properties/JWTProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/util/JWTUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/util/ThreadLocalUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/java/com/mfac/gateway/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/java/com/mfac/gateway/constant/PathConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/java/com/mfac/gateway/filters/AdminGlobalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/java/com/mfac/gateway/properties/JWTProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/java/com/mfac/gateway/utils/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mfac-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mfac-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,20 +55,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/WebProject/MFAC/BackCloud/MFAC-BLOG-BACK-CLOUD/user-server/src/main/java/com/mfac/user/pojo",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "11bf5fbfc5a19e8b4694e9a9ee1b25a2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/WebProject/MFAC/BackCloud/MFAC-BLOG-BACK-CLOUD/user-server/src/main/java/com/mfac/user/pojo&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;11bf5fbfc5a19e8b4694e9a9ee1b25a2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\WebProject\MFAC\BackCloud\MFAC-BLOG-BACK-CLOUD\user-server\src\main\java\com\mfac\user\pojo" />
@@ -125,6 +116,9 @@
       <workItem from="1723901759174" duration="47000" />
       <workItem from="1724401075628" duration="762000" />
       <workItem from="1724484909940" duration="1461000" />
+      <workItem from="1724632922468" duration="244000" />
+      <workItem from="1724633242563" duration="678000" />
+      <workItem from="1724634231891" duration="1665000" />
     </task>
     <servers />
   </component>
