@@ -5,12 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5da7153a-19c6-4fe8-8197-0a14078dc6ae" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/common/constant/BlogConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/common/constant/ServerConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/common/utils/SnowFlakeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mfac/common/utils/ThreadLocalUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/constant/ServerConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/interceptor/SrcPathInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/interceptor/AdminInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/interceptor/AdminInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/config/WebMvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/config/WebMvcConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/interceptor/AdminInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/interceptor/AdminInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/target/classes/com/mfac/tool/config/WebMvcConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/target/classes/com/mfac/tool/config/WebMvcConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/target/classes/com/mfac/tool/interceptor/AdminInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/target/classes/com/mfac/tool/interceptor/AdminInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-server/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-server/target/classes/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -44,6 +69,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mfac.common.utils" />
+      <recent name="com.mfac.common.constant" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -55,6 +86,10 @@
       <workItem from="1723901520220" duration="2000" />
       <workItem from="1723901972588" duration="12000" />
       <workItem from="1723902118203" duration="4000" />
+      <workItem from="1724643629520" duration="611000" />
+      <workItem from="1724653587283" duration="88000" />
+      <workItem from="1724653693667" duration="910000" />
+      <workItem from="1724654736525" duration="608000" />
     </task>
     <servers />
   </component>

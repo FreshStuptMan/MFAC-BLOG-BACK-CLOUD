@@ -1,6 +1,7 @@
 package com.mfac.user.config;
 
 import com.mfac.user.interceptor.AdminInterceptor;
+import com.mfac.user.interceptor.SrcPathInterceptor;
 import com.mfac.user.json.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +29,8 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     @Resource
     private AdminInterceptor adminInterceptor;
-
+    @Resource
+    private SrcPathInterceptor srcPathInterceptor;
 
     /**
      * 注册拦截器
@@ -37,7 +39,12 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(adminInterceptor)
-                .addPathPatterns("/admin/**");
+                .addPathPatterns("/admin/**")
+                .order(1);
+        registry.addInterceptor(srcPathInterceptor)
+                .addPathPatterns("/login")
+                .addPathPatterns("/admin/**")
+                .order(0);
     }
 
     /**

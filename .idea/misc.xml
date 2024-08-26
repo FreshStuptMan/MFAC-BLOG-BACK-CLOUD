@@ -3,4 +3,5 @@
   <component name="MavenRunner">
     <option name="jreName" value="openjdk-20" />
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

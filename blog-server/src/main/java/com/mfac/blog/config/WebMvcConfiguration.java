@@ -1,6 +1,7 @@
 package com.mfac.blog.config;
 
 import com.mfac.blog.interceptor.AdminInterceptor;
+import com.mfac.blog.interceptor.SrcPathInterceptor;
 import com.mfac.blog.json.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +29,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Resource
     private AdminInterceptor adminInterceptor;
 
+    @Resource
+    private SrcPathInterceptor srcPathInterceptor;
+
     /**
      * 注册拦截器
      * @param registry
@@ -35,7 +39,14 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(adminInterceptor)
-                .addPathPatterns("/admin/**");
+                .addPathPatterns("/admin/**")
+                .order(1);
+        registry.addInterceptor(srcPathInterceptor)
+                .addPathPatterns("/blog/**")
+                .addPathPatterns("/tag/**")
+                .addPathPatterns("/classify/**")
+                .addPathPatterns("/admin/**")
+                .order(0);
     }
 
     /**

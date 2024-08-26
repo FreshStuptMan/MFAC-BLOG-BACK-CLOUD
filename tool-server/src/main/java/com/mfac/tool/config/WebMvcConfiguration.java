@@ -1,6 +1,7 @@
 package com.mfac.tool.config;
 
 import com.mfac.tool.interceptor.AdminInterceptor;
+import com.mfac.tool.interceptor.SrcPathInterceptor;
 import com.mfac.tool.json.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +30,8 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Resource
     private AdminInterceptor adminInterceptor;
 
+    @Resource
+    private SrcPathInterceptor srcPathInterceptor;
 
     /**
      * 注册拦截器
@@ -37,7 +40,14 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(adminInterceptor)
-                .addPathPatterns("/admin/**");
+                .addPathPatterns("/admin/**")
+                .order(1);
+
+        registry.addInterceptor(srcPathInterceptor)
+                .addPathPatterns("/admin/**")
+                .addPathPatterns("/tool/**")
+                .addPathPatterns("/toolType/**")
+                .order(0);
     }
 
     /**
