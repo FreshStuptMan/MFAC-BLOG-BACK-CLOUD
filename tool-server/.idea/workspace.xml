@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89424296-2ace-4f1d-a23b-22229776bd75" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/UserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/config/WebMvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/controller/admin/AdminUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/interceptor/AdminInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/json/JacksonObjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/pojo/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/pojo/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/pojo/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/pojo/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/pojo/vo/LoginVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/pojo/vo/UserDetailVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/properties/JWTProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/util/JWTUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/java/com/mfac/user/util/ThreadLocalUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../user-server/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +107,7 @@
       <workItem from="1724474513306" duration="599000" />
       <workItem from="1724484895653" duration="634000" />
       <workItem from="1724485886141" duration="490000" />
+      <workItem from="1724630605066" duration="598000" />
     </task>
     <servers />
   </component>
