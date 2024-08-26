@@ -20,7 +20,7 @@ public class TagController {
     private TagService tagService;
 
     /**
-     * 获取所以标签
+     * 获取所有标签
      * @return
      */
     @GetMapping("/listAll")

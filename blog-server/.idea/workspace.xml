@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ae4cdd5-ab9c-4527-86b4-27ae5322bfd5" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/java/com/mfac/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mfac-gateway/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mfac-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mfac-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mfac/blog/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mfac/blog/controller/TagController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-server/.idea/workspace.xml" afterDir="false" />
@@ -120,6 +118,7 @@
       <workItem from="1724630615589" duration="93000" />
       <workItem from="1724631208730" duration="1953000" />
       <workItem from="1724633828166" duration="321000" />
+      <workItem from="1724636495664" duration="927000" />
     </task>
     <servers />
   </component>
