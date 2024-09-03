@@ -1,5 +1,6 @@
 package com.mfac.blog.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.mfac.blog.constent.BlogConstant;
 import com.mfac.blog.pojo.PageResult;
 import com.mfac.blog.pojo.Result;
@@ -29,6 +30,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/list/{pageNum}/{pageSize}")
+    @SentinelResource("首页获取博客列表=>/blog/list/{pageNum}/{pageSize}")
     public Result list(@PathVariable Integer pageNum, @PathVariable Integer pageSize) {
         BlogListDTO blogListDTO = new BlogListDTO();
         blogListDTO.setStatus(BlogConstant.BLOG_STATUS_UP);
@@ -43,6 +45,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/newest")
+    @SentinelResource("获取最新的5条博客=>/blog/newest")
     public Result newest() {
         List<BlogListVO> list = blogService.newest();
         return Result.success(list);
@@ -54,6 +57,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/detail/{id}")
+    @SentinelResource("获取博客详情=>/blog/detail/{id}")
     public Result detail(@PathVariable Long id) {
         BlogDetailVO detail = blogService.detail(id);
         if(detail == null) {
@@ -71,6 +75,7 @@ public class BlogController {
      * @return
      */
     @PostMapping("/search")
+    @SentinelResource("搜索博客=>/blog/search")
     public Result search(@RequestBody BlogSearchDTO blogSearchDTO){
         PageResult page = blogService.search(blogSearchDTO);
         return Result.success(page);

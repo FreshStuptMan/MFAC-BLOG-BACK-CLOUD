@@ -1,4 +1,5 @@
 package com.mfac.blog.controller;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.mfac.blog.pojo.Result;
 import com.mfac.blog.pojo.entity.Classify;
 import com.mfac.blog.pojo.vo.ClassifyListVO;
@@ -23,6 +24,7 @@ public class ClassifyController {
      * @return
      */
     @GetMapping("/listAll")
+    @SentinelResource("获取所有分类=>/classify/listAll")
     public Result listAll() {
         List<Classify> list = classifyService.listAll();
         return Result.success(list);
@@ -33,6 +35,7 @@ public class ClassifyController {
      * @return
      */
     @GetMapping("/random")
+    @SentinelResource("随机获取5个分类=>/classify/random")
     public Result random() {
         List<Classify> list = classifyService.random();
         return Result.success(list);
@@ -43,6 +46,7 @@ public class ClassifyController {
      * @return
      */
     @GetMapping("/listAllWithTotal")
+    @SentinelResource("获取所有分类，并且包括相关的博客数=>/classify/listAllWithTotal")
     public Result listAllWithTotal() {
         List<ClassifyListVO> list = classifyService.listAllWithTotal();
         return Result.success(list);

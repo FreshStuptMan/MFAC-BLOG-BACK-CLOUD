@@ -2,6 +2,7 @@ package com.mfac.user.controller;
 
 import cn.hutool.crypto.digest.BCrypt;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.mfac.user.pojo.Result;
 import com.mfac.user.pojo.dto.LoginDTO;
 import com.mfac.user.pojo.entity.User;
@@ -32,6 +33,7 @@ public class LoginController {
      * @return
      */
     @PostMapping("/login")
+    @SentinelResource("登录=>/login")
     public Result login(@RequestBody LoginDTO loginDTO) {
         User user = userService.selectByAccount(loginDTO.getAccount());
         if(user == null) {

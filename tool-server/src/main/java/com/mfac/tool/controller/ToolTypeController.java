@@ -1,5 +1,6 @@
 package com.mfac.tool.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.mfac.tool.pojo.Result;
 import com.mfac.tool.pojo.entity.ToolType;
 import com.mfac.tool.pojo.vo.ToolTypeDetailVO;
@@ -24,6 +25,7 @@ public class ToolTypeController {
      * @return
      */
     @GetMapping("/listAll")
+    @SentinelResource("获取所有工具类型=>/toolType/listAll")
     public Result listAll() {
         List<ToolType> types = toolTypeService.listAll();
         return Result.success(types);
@@ -34,6 +36,7 @@ public class ToolTypeController {
      * @return
      */
     @GetMapping("/listDetailAll")
+    @SentinelResource("获取所有工具类型和其下的所有工具=>/toolType/listDetailAll")
     public Result listDetailAll() {
         List<ToolTypeDetailVO> list = toolTypeService.listDetailAll();
         return Result.success(list);
