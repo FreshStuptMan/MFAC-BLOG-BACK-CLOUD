@@ -1,6 +1,7 @@
 package com.mfac.blog.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.mfac.blog.pojo.Result;
 import com.mfac.blog.pojo.entity.Tag;
 import com.mfac.blog.pojo.vo.TagListVO;
@@ -25,7 +26,7 @@ public class TagController {
      * @return
      */
     @GetMapping("/listAll")
-    @SentinelResource("获取所有标签=>/tag/listAll")
+    @SentinelResource(value = "获取所有标签=>/tag/listAll", blockHandler = "listAllBlockHandler")
     public Result listAll() {
         List<Tag> list = tagService.listAll();
         return Result.success(list);
@@ -36,7 +37,7 @@ public class TagController {
      * @return
      */
     @GetMapping("/random")
-    @SentinelResource("随机获取5个标签=>/tag/random")
+    @SentinelResource(value = "随机获取5个标签=>/tag/random", blockHandler = "randomBlockHandler")
     public Result random() {
         List<Tag> list = tagService.random();
         return Result.success(list);
@@ -47,9 +48,37 @@ public class TagController {
      * @return
      */
     @GetMapping("/listAllWithTotal")
-    @SentinelResource("获取所有标签，并包括其下的博客数=>/tag/listAllWithTotal")
+    @SentinelResource(value = "获取所有标签，并包括其下的博客数=>/tag/listAllWithTotal", blockHandler = "listAllWithTotalBlockHandler")
     public Result listAllWithTotal() {
         List<TagListVO> list = tagService.listAllWithTotal();
         return Result.success(list);
     }
+
+    /**
+     * 获取所有标签 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result listAllBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试");
+    }
+
+    /**
+     * 随机获取5个标签 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result randomBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试");
+    }
+
+    /**
+     * 获取所有标签，并包括其下的博客数 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result listAllWithTotalBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试");
+    }
+
 }

@@ -3,6 +3,7 @@ package com.mfac.user.controller;
 import cn.hutool.crypto.digest.BCrypt;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.mfac.user.pojo.Result;
 import com.mfac.user.pojo.dto.LoginDTO;
 import com.mfac.user.pojo.entity.User;
@@ -33,7 +34,7 @@ public class LoginController {
      * @return
      */
     @PostMapping("/login")
-    @SentinelResource("登录=>/login")
+    @SentinelResource(value = "登录=>/login", blockHandler = "loginBlockHandler")
     public Result login(@RequestBody LoginDTO loginDTO) {
         User user = userService.selectByAccount(loginDTO.getAccount());
         if(user == null) {
@@ -49,4 +50,13 @@ public class LoginController {
         return Result.success(loginVO);
     }
 
+    /**
+     * 登录 限流 的快速失败函数
+     * @param loginDTO
+     * @param e
+     * @return
+     */
+    public static Result loginBlockHandler(LoginDTO loginDTO, BlockException e) {
+        return Result.error("服务拥挤，请1稍后再试！");
+    }
 }

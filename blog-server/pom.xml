@@ -169,6 +169,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
         </dependency>
+        <!--    Sentinel通过Nacos实现持久化    -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+            <version>1.8.5</version> <!--Sentinel 版本 -->
+        </dependency>
+
     </dependencies>
 
     <build>

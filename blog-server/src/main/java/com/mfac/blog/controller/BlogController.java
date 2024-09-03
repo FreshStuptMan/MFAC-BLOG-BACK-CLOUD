@@ -1,6 +1,7 @@
 package com.mfac.blog.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.mfac.blog.constent.BlogConstant;
 import com.mfac.blog.pojo.PageResult;
 import com.mfac.blog.pojo.Result;
@@ -30,7 +31,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/list/{pageNum}/{pageSize}")
-    @SentinelResource("首页获取博客列表=>/blog/list/{pageNum}/{pageSize}")
+    @SentinelResource(value = "首页获取博客列表=>/blog/list/{pageNum}/{pageSize}", blockHandler = "listBlockHandler")
     public Result list(@PathVariable Integer pageNum, @PathVariable Integer pageSize) {
         BlogListDTO blogListDTO = new BlogListDTO();
         blogListDTO.setStatus(BlogConstant.BLOG_STATUS_UP);
@@ -45,7 +46,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/newest")
-    @SentinelResource("获取最新的5条博客=>/blog/newest")
+    @SentinelResource(value = "获取最新的5条博客=>/blog/newest", blockHandler = "newestBlockHandler")
     public Result newest() {
         List<BlogListVO> list = blogService.newest();
         return Result.success(list);
@@ -57,7 +58,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/detail/{id}")
-    @SentinelResource("获取博客详情=>/blog/detail/{id}")
+    @SentinelResource(value = "获取博客详情=>/blog/detail/{id}", blockHandler = "detailBlockHandler")
     public Result detail(@PathVariable Long id) {
         BlogDetailVO detail = blogService.detail(id);
         if(detail == null) {
@@ -75,9 +76,48 @@ public class BlogController {
      * @return
      */
     @PostMapping("/search")
-    @SentinelResource("搜索博客=>/blog/search")
+    @SentinelResource( value = "搜索博客=>/blog/search", blockHandler = "searchBlockHandler")
     public Result search(@RequestBody BlogSearchDTO blogSearchDTO){
         PageResult page = blogService.search(blogSearchDTO);
         return Result.success(page);
     }
+
+    /**
+     * 首页获取博客列表 限流 的快速失败处理函数
+     * @param pageNum
+     * @param pageSize
+     * @param e
+     * @return
+     */
+    public static Result listBlockHandler(Integer pageNum, Integer pageSize, BlockException e) {
+        return Result.error("服务拥挤，请稍后再试！");
+    };
+
+    /**
+     * 获取最新的5条博客 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result newestBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试！");
+    };
+
+    /**
+     * 获取博客详情 限流 的快速失败函数
+     * @param id
+     * @return
+     */
+    public static Result detailBlockHandler(Long id, BlockException e) {
+        return Result.error("服务拥挤，请稍后再试！");
+    };
+
+    /**
+     * 搜索博客 限流 的快速失败函数
+     * @param blogSearchDTO
+     * @return
+     */
+    public static Result searchBlockHandler(BlogSearchDTO blogSearchDTO, BlockException e) {
+        return Result.error("服务拥挤，请稍后再试！");
+    };
+
 }

@@ -1,5 +1,6 @@
 package com.mfac.blog.controller;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.mfac.blog.pojo.Result;
 import com.mfac.blog.pojo.entity.Classify;
 import com.mfac.blog.pojo.vo.ClassifyListVO;
@@ -24,7 +25,7 @@ public class ClassifyController {
      * @return
      */
     @GetMapping("/listAll")
-    @SentinelResource("获取所有分类=>/classify/listAll")
+    @SentinelResource(value = "获取所有分类=>/classify/listAll", blockHandler = "listAllBlockHandler")
     public Result listAll() {
         List<Classify> list = classifyService.listAll();
         return Result.success(list);
@@ -35,7 +36,7 @@ public class ClassifyController {
      * @return
      */
     @GetMapping("/random")
-    @SentinelResource("随机获取5个分类=>/classify/random")
+    @SentinelResource(value = "随机获取5个分类=>/classify/random", blockHandler = "randomBlockHandler")
     public Result random() {
         List<Classify> list = classifyService.random();
         return Result.success(list);
@@ -46,9 +47,39 @@ public class ClassifyController {
      * @return
      */
     @GetMapping("/listAllWithTotal")
-    @SentinelResource("获取所有分类，并且包括相关的博客数=>/classify/listAllWithTotal")
+    @SentinelResource(value = "获取所有分类，并且包括相关的博客数=>/classify/listAllWithTotal", blockHandler = "listAllWithTotalBlockHandler")
     public Result listAllWithTotal() {
         List<ClassifyListVO> list = classifyService.listAllWithTotal();
         return Result.success(list);
     }
+
+    /**
+     * 获取所有分类 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result listAllBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试");
+    }
+
+    /**
+     * 随机获取5个分类 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result randomBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试");
+    }
+
+    /**
+     * 获取所有分类，并且包括相关的博客数 限流 的快速失败函数
+     * @param e
+     * @return
+     */
+    public static Result listAllWithTotalBlockHandler(BlockException e) {
+        return Result.error("服务拥挤，请稍后再试");
+    }
+
+
+
 }
