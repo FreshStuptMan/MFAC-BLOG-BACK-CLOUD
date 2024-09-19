@@ -5,20 +5,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1995a537-266a-44d2-bcd8-66eb8e96758b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/EmailApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/client/FriendLinkClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/config/OpenFeignConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/config/RabbitMQConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/config/WebMvcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/constant/EmailConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/constant/RabbitMQConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/constant/ServerConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/interceptor/AdminInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/interceptor/SrcPathInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/json/JacksonObjectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/listeners/RabbitMQListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/pojo/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/pojo/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/pojo/entity/FriendLink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/pojo/entity/FriendLinkEmailRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/util/EmailUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/util/SnowFlakeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/java/com/mfac/email/util/ThreadLocalUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../email-server/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/FriendLinkApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/aop/annotation/FriendLinkEmailMessageSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/aop/aspect/FriendLinkEmailMessageSenderAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/config/RabbitMQConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/config/WebMvcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/constant/EmailConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/constant/FriendLinkConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/constant/RabbitMQConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/constant/ServerConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/controller/admin/AdminFriendLinkController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/controller/admin/AdminFriendLinkEmailRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/interceptor/AdminInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/interceptor/SrcPathInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/json/JacksonObjectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/mapper/FriendLinkEmailRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/mapper/FriendLinkMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/pojo/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/pojo/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/pojo/dto/FriendLinkListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/pojo/entity/FriendLink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/pojo/entity/FriendLinkEmailRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/pojo/vo/FriendLinkListVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/service/FriendLinkEmailRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/service/FriendLinkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/service/impl/FriendLinkEmailRecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/service/impl/FriendLinkServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/util/RabbitMQUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/util/SnowFlakeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/java/com/mfac/friendLink/util/ThreadLocalUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/resources/bootstrap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/resources/mapper/FriendLinkEmailRecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../friendLink-server/src/main/resources/mapper/FriendLinkMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/controller/BlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/controller/ClassifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/controller/ClassifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/controller/TagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blog-server/target/classes/com/mfac/blog/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/target/classes/com/mfac/blog/controller/BlogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/constent/ServerConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/constent/ServerConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/interceptor/SrcPathInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/src/main/java/com/mfac/blog/interceptor/SrcPathInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/target/classes/com/mfac/blog/controller/ClassifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/target/classes/com/mfac/blog/controller/ClassifyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-server/target/classes/com/mfac/blog/controller/TagController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../blog-server/target/classes/com/mfac/blog/controller/TagController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tool-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/controller/ToolTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/controller/ToolTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/constant/ServerConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/constant/ServerConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/interceptor/SrcPathInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/java/com/mfac/tool/interceptor/SrcPathInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-server/target/classes/com/mfac/tool/controller/ToolTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-server/target/classes/com/mfac/tool/controller/ToolTypeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mfac/user/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mfac/user/constant/ServerConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/constant/ServerConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mfac/user/interceptor/SrcPathInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mfac/user/interceptor/SrcPathInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mfac/user/constant/ServerConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mfac/user/constant/ServerConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mfac/user/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mfac/user/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mfac/user/interceptor/SrcPathInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mfac/user/interceptor/SrcPathInterceptor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +117,10 @@
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -133,6 +192,11 @@
       <workItem from="1725371393729" duration="2379000" />
       <workItem from="1725385212474" duration="239000" />
       <workItem from="1725388168954" duration="110000" />
+      <workItem from="1725460883145" duration="98000" />
+      <workItem from="1725780825553" duration="6000" />
+      <workItem from="1725786346257" duration="268000" />
+      <workItem from="1725786624412" duration="64000" />
+      <workItem from="1725786838294" duration="2514000" />
     </task>
     <servers />
   </component>

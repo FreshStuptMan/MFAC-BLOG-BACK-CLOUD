@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.friendLink.mapper.FriendLinkMapper">
+    <!--  创建友链  -->
+    <insert id="create">
+        insert into friend_link(id, name, link, description, avatar, author, email, color, create_time, update_time, status, down_reason)
+        values (#{id}, #{name}, #{link}, #{description}, #{avatar}, #{author}, #{email}, #{color}, #{createTime}, #{updateTime}, #{status}, #{downReason})
+    </insert>
+    <!--  获取友链列表  -->
+    <select id="list" resultType="com.mfac.friendLink.pojo.vo.FriendLinkListVO">
+        select
+            id, name, link, description, avatar, author, color, create_time, update_time, status, down_reason
+        from
+            friend_link
+        <where>
+            <if test="status != null">AND status = #{status}</if>
+            <if test="author != null and author != ''">AND author like concat('%', #{author}, '%')</if>
+            <if test="name != null and name != ''">AND name like concat('%', #{name}, '%')</if>
+        </where>
+    </select>
+    <!--  更新友链  -->
+    <update id="update">
+        update friend_link
+        <set>
+            <if test="name != '' and name != null">name = #{name},</if>
+            <if test="link != '' and link != null">link = #{link},</if>
+            <if test="description != '' and description != null">descirption = #{description},</if>
+            <if test="avatar != null and avatar != ''">avatar = #{avatar},</if>
+            <if test="author != null and author = ''">author = #{author},</if>
+            <if test="email != null and email != ''">email = #{email},</if>
+            <if test="color != null and color != ''">color = #{color},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="status != null">status = #{status}</if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--  更新友链状态  -->
+    <update id="changeStatus">
+        update friend_link
+        <set>
+            status = #{status}
+            <if test="downReason != null">,down_reason = #{downReason}</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

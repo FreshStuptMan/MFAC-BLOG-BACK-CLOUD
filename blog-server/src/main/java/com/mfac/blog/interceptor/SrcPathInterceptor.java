@@ -56,6 +56,8 @@ public class SrcPathInterceptor implements HandlerInterceptor {
         List<ServiceInstance> toolInstances = client.getInstances(ServerConstant.TOOL_SERVER);
         List<ServiceInstance> userInstances = client.getInstances(ServerConstant.USER_SERVER);
         List<ServiceInstance> gatewayInstances = client.getInstances(ServerConstant.GATEWAY_SERVER);
+        List<ServiceInstance> friendLinkInstances = client.getInstances(ServerConstant.FRIEND_LINK_SERVER);
+        List<ServiceInstance> emailInstances = client.getInstances(ServerConstant.EMAIL_SERVER);
         for (ServiceInstance instance  : gatewayInstances) {
             if (address.equals(instance.getHost())) {
                 return true;
@@ -72,6 +74,16 @@ public class SrcPathInterceptor implements HandlerInterceptor {
             }
         }
         for (ServiceInstance instance  : userInstances) {
+            if (address.equals(instance.getHost())) {
+                return true;
+            }
+        }
+        for (ServiceInstance instance  : friendLinkInstances) {
+            if (address.equals(instance.getHost())) {
+                return true;
+            }
+        }
+        for (ServiceInstance instance  : emailInstances) {
             if (address.equals(instance.getHost())) {
                 return true;
             }

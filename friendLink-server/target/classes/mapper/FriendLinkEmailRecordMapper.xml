@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mfac.friendLink.mapper.FriendLinkEmailRecordMapper">
+    <!--  创建记录  -->
+    <insert id="create">
+        insert into
+            friend_link_email_record(id, email, status, record_time, email_type, fault_reason, friend_link_id)
+        values (#{id}, #{email}, #{status}, #{recordTime},#{emailType}, #{faultReason}, #{friendLinkId})
+    </insert>
+    <!--  更新记录状态  -->
+    <update id="changeStatus">
+        update friend_link_email_record
+        <set>
+            status = #{status}
+            <if test="faultReason != null">,fault_reason = #{faultReason}</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
