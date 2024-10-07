@@ -1,10 +1,14 @@
 package com.mfac.friendLink.util;
 
+import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
 import com.mfac.friendLink.constant.EmailConstant;
 import com.mfac.friendLink.constant.RabbitMQConstant;
+import com.mfac.friendLink.pojo.dto.FriendLinkEmailMessage;
 import com.mfac.friendLink.pojo.entity.FriendLinkEmailRecord;
 import com.mfac.friendLink.service.FriendLinkEmailRecordService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
@@ -44,7 +48,8 @@ public class RabbitMQUtil {
                 }
             });
             // 设置回调处理并发送消息
-            rabbitTemplate.convertAndSend(RabbitMQConstant.EXCHANGE, RabbitMQConstant.FRIEND_LINK_EMAIL_MESSAGE_QUEUE_KEY, id, cd);
+            Message message = new Message(JSON.toJSONBytes(new FriendLinkEmailMessage(id, ThreadLocalUtil.getCurrentId())));
+            rabbitTemplate.convertAndSend(RabbitMQConstant.EXCHANGE, RabbitMQConstant.FRIEND_LINK_EMAIL_MESSAGE_QUEUE_KEY, message, cd);
         } catch (Exception e) {
             // 发送失败，更新邮件记录状态
             updateEmailRecordStatus(id, EmailConstant.SEND_STATUS_FAULT, "生产者报错(RabbitMQUtil.EmailMessageSender):"+e.getMessage());
