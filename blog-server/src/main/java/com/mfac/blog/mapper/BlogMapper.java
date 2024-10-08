@@ -8,8 +8,10 @@ import com.mfac.blog.pojo.vo.BlogDetailVO;
 import com.mfac.blog.pojo.vo.BlogListVO;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface BlogMapper {
@@ -70,4 +72,11 @@ public interface BlogMapper {
      * @return
      */
     Page<BlogListVO> search(BlogSearchDTO blogSearchDTO);
+
+    /**
+     * 浏览量批量落库
+     * @param data
+     * @return
+     */
+    Integer updateViewBatch(@Param("data") Map<Long, Integer> data);
 }

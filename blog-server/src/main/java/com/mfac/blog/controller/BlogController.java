@@ -2,6 +2,8 @@ package com.mfac.blog.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.mfac.blog.aop.annotation.BlogViewAdder;
+import com.mfac.blog.aop.annotation.BlogViewUpdater;
 import com.mfac.blog.constent.BlogConstant;
 import com.mfac.blog.pojo.PageResult;
 import com.mfac.blog.pojo.Result;
@@ -31,6 +33,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/list/{pageNum}/{pageSize}")
+    @BlogViewAdder
     @SentinelResource(value = "首页获取博客列表=>/blog/list/{pageNum}/{pageSize}", blockHandler = "listBlockHandler")
     public Result list(@PathVariable Integer pageNum, @PathVariable Integer pageSize) {
         BlogListDTO blogListDTO = new BlogListDTO();
@@ -58,6 +61,7 @@ public class BlogController {
      * @return
      */
     @GetMapping("/detail/{id}")
+    @BlogViewUpdater
     @SentinelResource(value = "获取博客详情=>/blog/detail/{id}", blockHandler = "detailBlockHandler")
     public Result detail(@PathVariable Long id) {
         BlogDetailVO detail = blogService.detail(id);

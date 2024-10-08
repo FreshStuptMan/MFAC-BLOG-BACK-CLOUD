@@ -10,6 +10,7 @@ import com.mfac.blog.pojo.vo.BlogDetailVO;
 import com.mfac.blog.pojo.vo.BlogListVO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BlogService {
     /**
@@ -68,4 +69,10 @@ public interface BlogService {
      */
     PageResult search(BlogSearchDTO blogSearchDTO);
 
+    /**
+     * 浏览量批量落库
+     * @param data
+     * @return
+     */
+    Integer updateViewBatch(Map<Long, Integer> data);
 }

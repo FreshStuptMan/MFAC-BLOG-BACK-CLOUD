@@ -88,4 +88,19 @@
             and status = 2
         </where>
     </select>
+    <!--  浏览量批量落库  -->
+    <update id="updateViewBatch">
+        update blog set view = view +
+        case
+        <foreach collection="data" index="key" item="value">
+            when id = #{key} then #{value}
+        </foreach>
+        else 0
+        end
+        where id in (
+        <foreach collection="data" index="key" item="value" separator=",">
+            #{key}
+        </foreach>
+        )
+    </update>
 </mapper>

@@ -23,4 +23,5 @@ public class Blog implements Serializable {
     private String content;
     private Long classifyId;
     private Integer types;
+    private Integer view;
 }
